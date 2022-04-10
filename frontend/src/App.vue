@@ -1,14 +1,15 @@
 <template>
   <div id="app">
     <section class="profile">
+      <header></header>
       <div class="info-profile">
         <img alt="Imagem de Perfil" src="./assets/michael.jpeg" />
         <p>
-          Nome: <b>teste</b>
+          Nome: <b>{{ info.data.name }}</b>
         </p>
         <p>Email: <b>gustavo@gmail.com</b></p>
         <p>
-          Localização: <b>{{ info }}</b>
+          Localização: <b>{{ info.data.location }}</b>
         </p>
         <p>Link github: <b>github.com/Gustavo</b></p>
       </div>
@@ -38,8 +39,8 @@ export default {
   },
   mounted() {
     axios
-      .get("http://backend/api/v1/users")
-      .then((response) => (console.log(response)));
+      .get("https://api.github.com/users/MichaelVini")
+      .then((response) => (this.info = response));
   },
 };
 </script>
@@ -102,6 +103,14 @@ ul li {
 .profile {
   display: flex;
   flex-direction: column;
+  height: 100vh;
+}
+
+footer {
+  height: 40px;
+  align-items: center;
+  background-color: #0b5ed7;
+  color: white;
 }
 
 @media (min-width: 700px) {
