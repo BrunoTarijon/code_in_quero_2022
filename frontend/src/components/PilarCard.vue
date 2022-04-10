@@ -2,7 +2,7 @@
   <section class="pilar">
     <details class="teste">
       <summary class="summary">{{ title }}</summary>
-      <Item v-for="(itemInfo, index) in dataInfo" :key="index" :item="itemInfo"/>
+      <Item v-for="(itemInfo, index) in dataInfo" :key="index" :item="itemInfo" :index="index"/>
     </details>
     <div class="content" v-if="showPilar"></div>
   </section>

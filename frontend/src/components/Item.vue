@@ -26,10 +26,8 @@
           rows="2"
         ></b-form-textarea>
         <div>
-          <b-button variant="outline-primary" v-b-modal.modal-1
-            >Mostrar Guias</b-button
-          >
-          <b-modal id="modal-1" title="Guia">
+          <b-button @click="showModal"  variant="outline-primary">Mostrar Guias</b-button>
+          <b-modal ref="myModal" title="Guia">
             <GuideCard :itemGuide="item" />
           </b-modal>
         </div>
@@ -44,7 +42,8 @@ export default {
     GuideCard,
   },
   props: {
-    item: Object
+    item: Object,
+    index: Number
   },
   data: function () {
     return {
@@ -63,6 +62,9 @@ export default {
     showCompetenceInformation() {
       this.showCompetence = !this.showCompetence;
     },
+    showModal(){
+      this.$refs['myModal'].show();
+    }
   },
 };
 </script>
