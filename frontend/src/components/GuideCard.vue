@@ -1,17 +1,17 @@
 <template>
   <section class="guide">
     <div class="card">
-      <p>Bruno</p>
+      <p><b>Bruno</b></p>
       <p>{{ this.infoGuide.data[0] }}</p>
       <p>/artigo-sobre-git</p>
     </div>
     <div class="card">
-      <p>Gustavo</p>
+      <p><b>Gustavo</b></p>
       <p>{{ this.infoGuide.data[0] }}</p>
       <p>/curso-de-banco-de-dados</p>
     </div>
     <div class="card">
-      <p>Michael</p>
+      <p><b>Michael</b></p>
       <p>{{ this.infoGuide.data[0] }}</p>
     </div>
   </section>
