@@ -28,9 +28,6 @@ export default {
       this.showPilar = !this.showPilar;
     },
   },
-  mounted(){
-    console.log('alooo',this.dataInfo)
-  }
 };
 </script>
 <style scoped>

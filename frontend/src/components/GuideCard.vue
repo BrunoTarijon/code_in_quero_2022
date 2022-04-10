@@ -31,11 +31,9 @@ export default {
     }
   },
   async mounted() {
-    console.log('itemGUide', this.itemGuide.title)
     await axios
       .get('http://localhost:3000/api/v1/materials/assunto/?title=Entende os conceitos básicos de uma API')
       .then((response) => (this.infoGuide = response));
-    console.log('infoGUide', this.infoGuide.data[0])
   },
   method: {
     filterItemGuide() {

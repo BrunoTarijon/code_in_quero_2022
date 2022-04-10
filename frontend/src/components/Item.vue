@@ -53,9 +53,6 @@ export default {
       showCompetence: false,
     };
   },
-  mounted(){
-      console.log('to aqui',this.item)
-    },
   methods: {
     showMoreEvidence() {
       this.showEvidence = !this.showEvidence;
@@ -66,7 +63,6 @@ export default {
     showCompetenceInformation() {
       this.showCompetence = !this.showCompetence;
     },
-    
   },
 };
 </script>

@@ -55,8 +55,6 @@ export default {
      this.competenceFundamentals =  await group.filter( e => {
         e.group == 'Fundamentos'
       })
-
-      // console.log('tt',this.competenceFundamentals)
     },
     async getCompetence() {
      try {
