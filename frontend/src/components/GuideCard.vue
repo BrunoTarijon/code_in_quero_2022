@@ -3,18 +3,15 @@
     <div class="card">
       <p>Bruno</p>
       <p>{{ this.infoGuide.data[0] }}</p>
-      <p>{{ this.infoGuide.data[0] }}</p>
-      <p>{{ this.infoGuide.data[0] }}</p>
+      <p>/artigo-sobre-git</p>
     </div>
     <div class="card">
       <p>Gustavo</p>
       <p>{{ this.infoGuide.data[0] }}</p>
-      <p>{{ this.infoGuide.data[0] }}</p>
-      <p>{{ this.infoGuide.data[0] }}</p>
+      <p>/curso-de-banco-de-dados</p>
     </div>
     <div class="card">
       <p>Michael</p>
-      <p>{{ this.infoGuide.data[0] }}</p>
       <p>{{ this.infoGuide.data[0] }}</p>
     </div>
   </section>
