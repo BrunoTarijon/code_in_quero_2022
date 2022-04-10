@@ -2,8 +2,7 @@
   <section class="pilar">
     <details class="teste">
       <summary class="summary">{{ title }}</summary>
-      <Item />
-      <Item />
+      <Item v-for="(itemInfo, index) in dataInfo" :key="index" :item="itemInfo"/>
     </details>
     <div class="content" v-if="showPilar"></div>
   </section>
@@ -17,11 +16,11 @@ export default {
   },
   props: {
     title: String,
+    dataInfo: Array
   },
   data() {
     return {
       showPilar: false,
-      data: null,
     };
   },
   methods: {
@@ -29,6 +28,9 @@ export default {
       this.showPilar = !this.showPilar;
     },
   },
+  mounted(){
+    console.log('alooo',this.dataInfo)
+  }
 };
 </script>
 <style scoped>

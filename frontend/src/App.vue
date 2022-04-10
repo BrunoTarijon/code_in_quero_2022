@@ -7,16 +7,13 @@
         <p>
           Nome: <b>{{ info.data.name }}</b>
         </p>
-        <p>Email: <b>gustavo@gmail.com</b></p>
-        <p>
-          Localização: <b>{{ info.data.location }}</b>
-        </p>
-        <p>Link github: <b>github.com/Gustavo</b></p>
+        <p>Contato: <b>{{ info.data.contact }}</b></p>
+        <p>Link github: <b>{{ info.data.link }}</b></p>
       </div>
       <div class="content">
-        <PilarCard title="Tecnologia" />
-        <PilarCard title="Pessoas" />
-        <PilarCard title="Produto" />
+        <PilarCard title="Fundamentos" :dataInfo="competenceFundamentals"/>
+        <PilarCard title="Programação" :dataInfo="competenceProgramming"/>
+        <PilarCard title="Produto" :dataInfo="competencePeople" />
       </div>
     </section>
   </div>
@@ -35,13 +32,43 @@ export default {
     return {
       info: null,
       description: null,
+      competence: null,
+      competenceFundamentals: null,
+      competenceProgramming: null,
+      competencePeople: null
+
     };
   },
-  mounted() {
-    axios
-      .get("https://api.github.com/users/MichaelVini")
+  async mounted() {
+    await axios
+      .get("http://localhost:3000/api/v1/users/4")
       .then((response) => (this.info = response));
+     await axios
+      .get("http://localhost:3000/api/v1/competences/4")
+      .then((response) => (this.competence = response));
+    //    this.competenceFundamentals = this.competence.data.filter(e => {
+    //     e.group == 'Fundamentos' })
+    this.getCompetence()
   },
+  methods: {
+    async filterGroupFundamentals(group){
+     this.competenceFundamentals =  await group.filter( e => {
+        e.group == 'Fundamentos'
+      })
+
+      // console.log('tt',this.competenceFundamentals)
+    },
+    async getCompetence() {
+     try {
+        const { data } = await axios.get('http://localhost:3000/api/v1/competences/4');
+        this.competenceFundamentals = data.filter( e => e.group == 'Fundamentos' )
+        this.competenceProgramming = data.filter( e => e.group == 'Programação' )
+        this.competencePeople = data.filter( e => e.group == 'Pessoas' )
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  }
 };
 </script>
 
@@ -104,13 +131,6 @@ ul li {
   display: flex;
   flex-direction: column;
   height: 100vh;
-}
-
-footer {
-  height: 40px;
-  align-items: center;
-  background-color: #0b5ed7;
-  color: white;
 }
 
 @media (min-width: 700px) {

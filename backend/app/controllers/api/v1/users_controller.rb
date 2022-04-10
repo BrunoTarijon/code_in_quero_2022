@@ -7,11 +7,11 @@ module Api
           users = User.order('created_at DESC')
           render json: { status: 'User Found!', message: 'User Found!', data: users }, status: :ok
         end
-        
+
         # Listar user passando ID
         def show
           user = User.find(params[:id])
-          render json: { status: 'User Found!', message: 'User Found!', data: user }, status: :ok
+          render json: user , status: :ok
         end
 
         # Criar um novo User

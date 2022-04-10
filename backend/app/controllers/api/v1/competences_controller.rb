@@ -5,12 +5,12 @@ module Api
       # Listar todas as Competences de um usuario especifico
       def index
         competences = Competence.order('created_at DESC')
-        render json: { status: 'Competences Found!', message: 'Competences Found!', data: competences }, status: :ok
+        render json: competences, status: :ok
       end
       # Listar competence passando ID
       def show
         competence = Competence.where(user_id: params[:id])
-        render json: { status: 'Competences Found!', message: 'Competences Found!', data: competence }, status: :ok
+        render json: competence, status: :ok
       end
     
       # Criar um novo Competence

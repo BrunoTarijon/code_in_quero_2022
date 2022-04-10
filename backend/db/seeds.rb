@@ -9,7 +9,7 @@
 5.times  do
 	User.create({
 		name: Faker::Name.unique.name,
-		contact: Faker::PhoneNumber.cell_phone_in_e164,
+		contact:  Faker::Internet.email,
     link: 'https://github.com/faker-ruby/faker'
 	})
 end

@@ -3,15 +3,13 @@
     <div class="card">
       <div class="title">
         <h4 @click="showCompetenceInformation">
-          Tem um amplo conhecimento dos conceitos técnicos básicos de
-          programação.
+          {{ this.item.title }}
         </h4>
       </div>
       <div class="content" v-if="showCompetence">
         <hr />
         <p>
-          Tem um amplo conhecimento dos conceitos técnicos básicos de
-          programação.
+          {{ this.item.description }}
         </p>
         <h5>Evidência</h5>
         <b-form-textarea
@@ -32,7 +30,7 @@
             >Mostrar Guias</b-button
           >
           <b-modal id="modal-1" title="Guia">
-            <GuideCard />
+            <GuideCard :itemGuide="item" />
           </b-modal>
         </div>
       </div>
@@ -45,6 +43,9 @@ export default {
   components: {
     GuideCard,
   },
+  props: {
+    item: Object
+  },
   data: function () {
     return {
       showEvidence: false,
@@ -52,6 +53,9 @@ export default {
       showCompetence: false,
     };
   },
+  mounted(){
+      console.log('to aqui',this.item)
+    },
   methods: {
     showMoreEvidence() {
       this.showEvidence = !this.showEvidence;
@@ -62,6 +66,7 @@ export default {
     showCompetenceInformation() {
       this.showCompetence = !this.showCompetence;
     },
+    
   },
 };
 </script>
