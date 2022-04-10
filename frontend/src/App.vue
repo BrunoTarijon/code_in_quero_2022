@@ -38,7 +38,7 @@ export default {
   },
   mounted() {
     axios
-      .get("http://172.22.0.4/api/v1/users")
+      .get("http://backend/api/v1/users")
       .then((response) => (console.log(response)));
   },
 };
