@@ -1,14 +1,14 @@
 <template>
   <div id="app">
+    <div class="logo"><img src="./assets/logo.png" alt=""></div>
     <section class="profile">
-      <header></header>
       <div class="info-profile">
         <img alt="Imagem de Perfil" src="./assets/michael.jpeg" />
         <p>
-          Nome: <b>{{ info.data.name }}</b>
+          <b>{{ info.data.name }}</b>
         </p>
-        <p>Contato: <b>{{ info.data.contact }}</b></p>
-        <p>Link github: <b>{{ info.data.link }}</b></p>
+        <p><b>Contato: </b>{{ info.data.contact }}</p>
+        <p><b>Github: </b>{{ info.data.link }}</p> 
       </div>
       <div class="content">
         <PilarCard title="Fundamentos" :dataInfo="competenceFundamentals"/>
@@ -81,7 +81,6 @@ ul li {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 
 #app h3 {
@@ -98,6 +97,15 @@ ul li {
 
 .header input {
   margin-left: 10px;
+}
+
+.logo {
+  text-align: center;
+}
+
+.logo img {
+  width: 390px;
+  padding: 15px;
 }
 
 .info-profile p {
@@ -118,7 +126,7 @@ ul li {
   flex-direction: column;
 }
 
-.profile img {
+.info-profile img {
   width: 300px;
   margin-left: 20px;
   margin: 0 auto;

@@ -39,6 +39,13 @@ export default {
   text-align: initial;
   font-size: 20px;
   margin: 20px;
+  color: #35A7E0;
+  font-weight: bold;
+}
+
+.button:hover {
+  background-color: #35A7E0;
+  border-color: #35A7E0;
 }
 
 @media (min-width: 700px) {

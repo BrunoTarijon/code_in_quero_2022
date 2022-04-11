@@ -26,8 +26,8 @@
           rows="2"
         ></b-form-textarea>
         <div>
-          <b-button @click="showModal"  variant="outline-primary">Mostrar Guias</b-button>
-          <b-modal ref="myModal" title="Guia">
+          <b-button @click="showModal"  variant="outline-primary" class="button">Mostrar Guias</b-button>
+          <b-modal class="modalContainer" ref="myModal" title="Guia">
             <GuideCard :itemGuide="item" />
           </b-modal>
         </div>
@@ -69,6 +69,16 @@ export default {
 };
 </script>
 <style scoped>
+.button {
+  color: #35A7E0;
+  border-color: #35A7E0;
+}
+
+.button:hover {
+  background-color: #35A7E0;
+  border-color: #35A7E0;
+}
+
 h1 {
   display: flex;
   justify-content: center;
